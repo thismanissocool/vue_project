@@ -4,7 +4,9 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import NavHeader from './components/NavHeader/NavHeader.vue'
 
+Vue.component('NavHeader', NavHeader);
 
 new Vue ({
   el: '#app',
