@@ -1,6 +1,8 @@
 
 import {
-  reqAddress
+  reqAddress,
+  reqCategorys,
+  reqShops
 } from '../api'
 
 import {
@@ -17,5 +19,20 @@ export default {
       const address = result.data;
       commit(RECEIVE_ADDRESS, {address})
     }
-  }
+  },
+  async getCategorys({commit}){
+    const result = await reqCategorys();
+    if (result.code === 0){
+      const categorys = result.data;
+      commit(RECEIVE_CATEGORYS, {categorys})
+    }
+  },
+  async getShops({commit, state}){
+    const {longitude, latitude} = state;
+    const result = await reqShops(longitude, latitude);
+    if (result.code === 0){
+      const shops = result.data;
+      commit(RECEIVE_SHOPS, {shops})
+    }
+  },
 }

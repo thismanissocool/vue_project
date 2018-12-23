@@ -10,7 +10,7 @@
   export default {
     mounted () {
       this.$store.dispatch('getAddress');
-      console.log(this.$store);
+//      console.log(this.$store);
     },
     components:{
       FooterGuide
