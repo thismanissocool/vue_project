@@ -8,7 +8,8 @@ import {
 import {
   RECEIVE_ADDRESS,
   RECEIVE_CATEGORYS,
-  RECEIVE_SHOPS
+  RECEIVE_SHOPS,
+  RECEIVE_USER
 } from './mutation-types'
 
 export default {
@@ -35,4 +36,9 @@ export default {
       commit(RECEIVE_SHOPS, {shops})
     }
   },
+
+  //同步保存用户信息
+  saveUser({commit}, user){
+    commit(RECEIVE_USER, {user})
+  }
 }
